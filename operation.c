@@ -43,18 +43,3 @@ void print_stack(Stack *stack) {
     printf("\n");
 }
 
-int main()
-{
-    Stack stack_1;
-    Stack stack_2;
-    init_stack(&stack_1);
-    init_stack(&stack_2);
-
-    push(&stack_1, 1);
-    push(&stack_1, 5);
-    push(&stack_1, 3);
-    push(&stack_1, 2);
-    push(&stack_1, 4);
-
-    print_stack(&stack_1);
-}
