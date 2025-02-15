@@ -13,6 +13,8 @@ void back_rotate(t_list **stack)
 {
     t_list *tmp1;
     t_list *tmp2;
+    if (!stack || !*stack || !(*stack)->next)
+        return; 
     tmp1 = *stack;
     while (tmp1->next->next)
     {
@@ -28,6 +30,8 @@ void sa(t_list **stack)
     t_list  *first;
     t_list *last;
 
+    if (!stack || !*stack || !(*stack)->next)
+        return; 
     first = *stack;
     last =  first->next;
 
