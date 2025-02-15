@@ -1,18 +1,22 @@
 #include "linked.h"
 
-t_list *addback(t_list *list, t_list *node)
+void    addback(t_list **list, t_list *node)
 {
     t_list *tmp;
-    tmp = list;
 
     if (!node)
+        return;
+    if (*list == NULL)
     {
-        return list;
+        *list = node;
+        return ;
     }
-    while(tmp)
+    tmp = *list;
+    while(tmp->next)
     {
         tmp = tmp->next;
     }
     tmp->next = node;
-    return list;
+    node->next = NULL;
+
 }
