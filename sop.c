@@ -76,22 +76,6 @@ int ft_lstsize(t_list *stack)
     return i;
 }
 
-int search_min_num(t_list **stack)
-{
-    int i;
-    
-    i = 0;
-    while (stack)
-    {
-        if ((*stack)->data > i)
-        {
-            i = (*stack)->data;
-        }
-        (*stack)->next;    
-    }
-    return (i);
-}
-
 void sort_three(t_list **stack)
 {
     int a;
@@ -120,13 +104,38 @@ void sort_three(t_list **stack)
         sa(stack);
 }
 
+int search_min_num(t_list *stack)
+{
+    int min;
+    
+    min = stack->data;
+    while (stack)
+    {
+        if (stack->data < min)
+        {
+            min = (stack)->data;
+        }
+        stack = stack->next;    
+    }
+    return (min);
+}
+
 void sort_five(t_list **stack_a, t_list **stack_b)
 {
-    while (ft_lstsize(stack_a) > 3)
+    int min;
+
+    while (ft_lstsize(*stack_a) > 3)
     {
-        search_min_num(stack_a);
+        min = search_min_num(*stack_a);
+        while (((*stack_a)->data) != min)
+        {
+            rev_rotate(stack_a);
+        }
+        push_stack(stack_a, stack_b);
     }
-    
+    sort_three(stack_a);
+    push_stack(stack_b, stack_a);
+    push_stack(stack_b, stack_a);
 }
 int main()
 {
