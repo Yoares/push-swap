@@ -1,4 +1,4 @@
-#include "linked.h"
+#include "pushswap.h"
 
 void rotate(t_list **stack)
 {
@@ -76,6 +76,22 @@ int ft_lstsize(t_list *stack)
     return i;
 }
 
+int search_min_num(t_list **stack)
+{
+    int i;
+    
+    i = 0;
+    while (stack)
+    {
+        if ((*stack)->data > i)
+        {
+            i = (*stack)->data;
+        }
+        (*stack)->next;    
+    }
+    return (i);
+}
+
 void sort_three(t_list **stack)
 {
     int a;
@@ -108,7 +124,7 @@ void sort_five(t_list **stack_a, t_list **stack_b)
 {
     while (ft_lstsize(stack_a) > 3)
     {
-        
+        search_min_num(stack_a);
     }
     
 }

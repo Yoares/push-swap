@@ -1,5 +1,5 @@
-#ifndef LINKED
-#define LINDED
+#ifndef PUSHSWAP
+#define PUSHSWAP
 
 #include <unistd.h>
 #include <stdlib.h>
