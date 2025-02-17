@@ -1,4 +1,4 @@
-#include "linked.h"
+#include "pushswap.h"
 
 t_list *ft_lstnew(int node)
 {

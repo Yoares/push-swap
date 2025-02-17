@@ -58,6 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "cstdlib": "c",
-    "linked.h": "c"
+    "linked.h": "c",
+    "pushswap.h": "c"
   }
 }
