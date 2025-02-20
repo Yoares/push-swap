@@ -16,7 +16,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(HEADER)
 	@cd libft && make && make clean
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
+	$(CC) $(CFLAGS) -L./libft -lft $(OBJS) $(LIBFT_A) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

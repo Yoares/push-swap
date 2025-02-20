@@ -61,20 +61,20 @@ void push_stack(t_stack **stack_a, t_stack **stack_b)
 //     }
 // }
 
-// int ft_lstsize(t_stack *stack)
-// {
-//     int i;
-//     t_stack *tmp;
+int lstsize(t_stack *stack)
+{
+    int i;
+    t_stack *tmp;
 
-//     tmp = stack;
-//     i = 0;
-//     while(tmp)
-//     {
-//         tmp = tmp->next;
-//         i++;
-//     }
-//     return i;
-// }
+    tmp = stack;
+    i = 0;
+    while(tmp)
+    {
+        tmp = tmp->next;
+        i++;
+    }
+    return i;
+}
 
 void sort_three(t_stack **stack)
 {
@@ -124,7 +124,7 @@ void sort_five(t_stack **stack_a, t_stack **stack_b)
 {
     int min;
 
-    while (ft_lstsize(*stack_a) > 3)
+    while (lstsize(*stack_a) > 3)
     {
         min = search_min_num(*stack_a);
         while (((*stack_a)->data) != min)

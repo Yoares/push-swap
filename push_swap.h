@@ -29,5 +29,5 @@ t_stack  *lstnew(int node);
 void    push_stack(t_stack **stack_a, t_stack **stack_b);
 void    rotate(t_stack **stack);
 int     parc_args(int ac, char **av, t_stack **stack_a);
-// int     ft_lstsize(t_stack *stack);
+int     lstsize(t_stack *stack);
 #endif
