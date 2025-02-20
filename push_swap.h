@@ -10,6 +10,17 @@ typedef struct t_list{
     struct  t_list *next;
 }t_list;
 
+typedef struct s_stack
+{
+	int				value;
+	int				indx;
+	int				pos;
+	int				targ_pos;
+	int				cost_a;
+	int				cost_b;
+	struct s_stack	*next;
+}					t_stack;
+
 void addfront(t_list **list, t_list *new_node);
 void addback(t_list **list, t_list *node);
 t_list *ft_lstnew(int node);
