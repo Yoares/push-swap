@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-static void	free_stack(t_stack **stack)
+void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
@@ -15,7 +15,7 @@ static void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-static void	error_exit(t_stack **stack_a, t_stack **stack_b)
+void	error_exit(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a)
 		free_stack(stack_a);
@@ -23,30 +23,4 @@ static void	error_exit(t_stack **stack_a, t_stack **stack_b)
 		free_stack(stack_b);
 	write(2, "Error\n", 6);
 	exit(1);
-}
-
-int main(int ac, char **av)
-{
-	int i;
-
-	i = 0;
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	if (ac < 2)
-		return (0);
-	stack_a = NULL;
-	stack_b = NULL;
-
-	if (!parc_args(ac, av, &stack_a))
-		error_exit(&stack_a, &stack_b);
-	if (lstsize(stack_a) == 3)
-		sort_three(&stack_a);
-	else if (lstsize(stack_a) == 5)
-		sort_five(&stack_a, &stack_b);
-	printf("\nFinal state:\n");
-    print(stack_a);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
-	return (0);
 }

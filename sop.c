@@ -61,20 +61,7 @@ void print(t_stack *stack)
     }
 }
 
-int lstsize(t_stack *stack)
-{
-    int i;
-    t_stack *tmp;
 
-    tmp = stack;
-    i = 0;
-    while(tmp)
-    {
-        tmp = tmp->next;
-        i++;
-    }
-    return i;
-}
 
 void sort_three(t_stack **stack)
 {
