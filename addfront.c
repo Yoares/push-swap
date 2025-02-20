@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void addfront(t_list **list, t_list *new_node)
+void addfront(t_stack **list, t_stack *new_node)
 {
     if (!new_node)
         return ;

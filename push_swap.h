@@ -1,15 +1,16 @@
 #ifndef PUSH_SWAP
-#define PUSH_SWAP
+# define PUSH_SWAP
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <limits.h>
+# include "libft/libft.h"
 
-typedef struct t_list{
+typedef struct t_stack{
     int data;
-    struct  t_list *next;
-}t_list;
+    struct  t_stack *next;
+}t_stack;
 
 // typedef struct s_stack
 // {
@@ -22,11 +23,11 @@ typedef struct t_list{
 // 	struct s_stack	*next;
 // }					t_stack;
 
-void    addfront(t_list **list, t_list *new_node);
-void    addback(t_list **list, t_list *node);
-t_list  *ft_lstnew(int node);
-void    push_stack(t_list **stack_a, t_list **stack_b);
-void    rotate(t_list **stack);
-int     parc_args(int ac, char **av, t_list **stack_a);
-int     ft_lstsize(t_list *stack);
+void    addfront(t_stack **list, t_stack *new_node);
+void    addback(t_stack **list, t_stack *node);
+t_stack  *lstnew(int node);
+void    push_stack(t_stack **stack_a, t_stack **stack_b);
+void    rotate(t_stack **stack);
+int     parc_args(int ac, char **av, t_stack **stack_a);
+// int     ft_lstsize(t_stack *stack);
 #endif

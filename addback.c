@@ -1,8 +1,8 @@
 #include "push_swap.h"
 
-void    addback(t_list **list, t_list *node)
+void    addback(t_stack **list, t_stack *node)
 {
-    t_list *tmp;
+    t_stack *tmp;
 
     if (!node)
         return;

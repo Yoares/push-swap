@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-t_list *ft_lstnew(int node)
+t_stack *lstnew(int node)
 {
-    t_list *new_node;
-    new_node = (t_list *)malloc(sizeof(t_list));
+    t_stack *new_node;
+    new_node = (t_stack *)malloc(sizeof(t_stack));
     if (!new_node)
         return NULL;
     new_node->data = node;

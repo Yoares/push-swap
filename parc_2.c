@@ -18,7 +18,7 @@ static	int	valid_num(char *av)
 	return (1);
 }
 
-static int	check_duplicat(t_list *stack, int num)
+static int	check_duplicat(t_stack *stack, int num)
 {
 	int	i;
 
@@ -32,11 +32,11 @@ static int	check_duplicat(t_list *stack, int num)
 	return (0);
 }
 
-int	parc_args(int ac, char **av, t_list **stack_a)
+int	parc_args(int ac, char **av, t_stack **stack_a)
 {
 	int		i;
 	long	num;
-	t_list	*new_node;
+	t_stack	*new_node;
 
 	i = 1;
 	while(i < ac)

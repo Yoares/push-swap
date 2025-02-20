@@ -10,16 +10,19 @@ OBJS = $(SRCS:.c=.o)
 
 HEADER = push_swap.h
 
+LIBFT_A = libft/libft.a
+
 all: $(NAME)
 
 $(NAME): $(OBJS) $(HEADER)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@cd libft && make && make clean
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(LIBFT_A)
 
 re: fclean all
 

@@ -1,8 +1,8 @@
 #include "push_swap.h"
 
-void rotate(t_list **stack)
+void rotate(t_stack **stack)
 {
-    t_list *tmp;
+    t_stack *tmp;
 
     tmp = *stack;
     *stack = (*stack)->next;
@@ -10,10 +10,10 @@ void rotate(t_list **stack)
     addback(stack, tmp);
 }
 
-void rev_rotate(t_list **stack)
+void rev_rotate(t_stack **stack)
 {
-    t_list *tmp1;
-    t_list *tmp2;
+    t_stack *tmp1;
+    t_stack *tmp2;
     if (!stack || !*stack || !(*stack)->next)
         return; 
     tmp1 = *stack;
@@ -26,10 +26,10 @@ void rev_rotate(t_list **stack)
     addfront(stack, tmp2);
 }
 
-void sa(t_list **stack)
+void sa(t_stack **stack)
 {
-    t_list  *first;
-    t_list *last;
+    t_stack  *first;
+    t_stack *last;
 
     if (!stack || !*stack || !(*stack)->next)
         return; 
@@ -41,9 +41,9 @@ void sa(t_list **stack)
     *stack = last;
 }
 
-void push_stack(t_list **stack_a, t_list **stack_b)
+void push_stack(t_stack **stack_a, t_stack **stack_b)
 {
-    t_list *tmp;
+    t_stack *tmp;
 
   if (!stack_a || !*stack_a)
         return;
@@ -52,31 +52,31 @@ void push_stack(t_list **stack_a, t_list **stack_b)
     addfront(stack_b, tmp);
 }
 
-void print(t_list *stack)
-{
-    while (stack)
-    {
-        printf("%d\n", stack->data);
-        stack = stack->next;
-    }
-}
+// void print(t_stack *stack)
+// {
+//     while (stack)
+//     {
+//         printf("%d\n", stack->data);
+//         stack = stack->next;
+//     }
+// }
 
-int ft_lstsize(t_list *stack)
-{
-    int i;
-    t_list *tmp;
+// int ft_lstsize(t_stack *stack)
+// {
+//     int i;
+//     t_stack *tmp;
 
-    tmp = stack;
-    i = 0;
-    while(tmp)
-    {
-        tmp = tmp->next;
-        i++;
-    }
-    return i;
-}
+//     tmp = stack;
+//     i = 0;
+//     while(tmp)
+//     {
+//         tmp = tmp->next;
+//         i++;
+//     }
+//     return i;
+// }
 
-void sort_three(t_list **stack)
+void sort_three(t_stack **stack)
 {
     int a;
     int b;
@@ -104,7 +104,7 @@ void sort_three(t_list **stack)
         sa(stack);
 }
 
-int search_min_num(t_list *stack)
+int search_min_num(t_stack *stack)
 {
     int min;
     
@@ -120,7 +120,7 @@ int search_min_num(t_list *stack)
     return (min);
 }
 
-void sort_five(t_list **stack_a, t_list **stack_b)
+void sort_five(t_stack **stack_a, t_stack **stack_b)
 {
     int min;
 
@@ -137,21 +137,21 @@ void sort_five(t_list **stack_a, t_list **stack_b)
     push_stack(stack_b, stack_a);
     push_stack(stack_b, stack_a);
 }
-int main()
-{
-    t_list *stack_a;
-    stack_a = NULL;
-//     addfront(&stack_a, ft_lstnew(6));
-    addfront(&stack_a, ft_lstnew(5));
-    addfront(&stack_a, ft_lstnew(4));
-    addfront(&stack_a, ft_lstnew(1));
-    addfront(&stack_a, ft_lstnew(3));
-    addfront(&stack_a, ft_lstnew(2));
-    printf("%s\n", "before");
-    print(stack_a);
-    t_list *stack_b;
-    stack_b = NULL;
-    printf("%s\n", "after sort");
-    sort_five(&stack_a, &stack_b);
-    print(stack_a);
-}
+// int main()
+// {
+//     t_list *stack_a;
+//     stack_a = NULL;
+// //     addfront(&stack_a, ft_lstnew(6));
+//     addfront(&stack_a, ft_lstnew(5));
+//     addfront(&stack_a, ft_lstnew(4));
+//     addfront(&stack_a, ft_lstnew(1));
+//     addfront(&stack_a, ft_lstnew(3));
+//     addfront(&stack_a, ft_lstnew(2));
+//     printf("%s\n", "before");
+//     print(stack_a);
+//     t_list *stack_b;
+//     stack_b = NULL;
+//     printf("%s\n", "after sort");
+//     sort_five(&stack_a, &stack_b);
+//     print(stack_a);
+// }
