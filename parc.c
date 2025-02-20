@@ -40,10 +40,10 @@ int main(int ac, char **av)
 
 	if (!parc_args(ac, av, &stack_a))
 		error_exit(&stack_a, &stack_b);
-	if (ft_lstsize(stack_a) == 3)
-		sort_three(&stack_a);
-	else if (ft_lstsize(stack_a) == 5)
-		sort_five(&stack_a, &stack_b);
+	if (lstsize(stack_a) == 3)
+		sort_three(stack_a);
+	else if (lstsize(stack_a) == 5)
+		sort_five(stack_a, stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

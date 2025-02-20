@@ -137,21 +137,3 @@ void sort_five(t_stack **stack_a, t_stack **stack_b)
     push_stack(stack_b, stack_a);
     push_stack(stack_b, stack_a);
 }
-// int main()
-// {
-//     t_list *stack_a;
-//     stack_a = NULL;
-// //     addfront(&stack_a, ft_lstnew(6));
-//     addfront(&stack_a, ft_lstnew(5));
-//     addfront(&stack_a, ft_lstnew(4));
-//     addfront(&stack_a, ft_lstnew(1));
-//     addfront(&stack_a, ft_lstnew(3));
-//     addfront(&stack_a, ft_lstnew(2));
-//     printf("%s\n", "before");
-//     print(stack_a);
-//     t_list *stack_b;
-//     stack_b = NULL;
-//     printf("%s\n", "after sort");
-//     sort_five(&stack_a, &stack_b);
-//     print(stack_a);
-// }
