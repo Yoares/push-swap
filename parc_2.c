@@ -41,14 +41,14 @@ int	parc_args(int ac, char **av, t_stack **stack_a)
 	i = 1;
 	while(i < ac)
 	{
-		if (!valid_number(av[i]))
+		if (!valid_num(av[i]))
 			return (0);
 		num = ft_atoi(av[i]);
 		if (num > INT_MAX || num < INT_MIN)
 			return (0);
 		if (check_duplicat(*stack_a, (int)num))
 			return (0);
-		new_node = ft_lstnew((int)num);
+		new_node = lstnew((int)num);
 		if (!new_node)
 			return (0);
 		addback(stack_a, new_node);

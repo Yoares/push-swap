@@ -30,4 +30,11 @@ void    push_stack(t_stack **stack_a, t_stack **stack_b);
 void    rotate(t_stack **stack);
 int     parc_args(int ac, char **av, t_stack **stack_a);
 int     lstsize(t_stack *stack);
+
+// sort function
+void    sort_three(t_stack **stack);
+void    sort_five(t_stack **stack_a, t_stack **stack_b);
+
+// print stack
+void print(t_stack *stack);
 #endif

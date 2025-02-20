@@ -52,14 +52,14 @@ void push_stack(t_stack **stack_a, t_stack **stack_b)
     addfront(stack_b, tmp);
 }
 
-// void print(t_stack *stack)
-// {
-//     while (stack)
-//     {
-//         printf("%d\n", stack->data);
-//         stack = stack->next;
-//     }
-// }
+void print(t_stack *stack)
+{
+    while (stack)
+    {
+        printf("%d\n", stack->data);
+        stack = stack->next;
+    }
+}
 
 int lstsize(t_stack *stack)
 {
