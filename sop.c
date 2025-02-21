@@ -17,14 +17,13 @@ void sort_three(t_stack **stack)
     int b;
     int c;
 
+    
     a = (*stack)->data;
     b = (*stack)->next->data;
-    c = (*stack)->next->next->data;
-
+    if (lstsize(*stack) == 3)
+        c = (*stack)->next->next->data;
     if (a > b && a > c)
-    {
         ra(stack);
-    }
     else if (b > a && b > c)
         rra(stack);
     a = (*stack)->data;
@@ -65,4 +64,16 @@ void sort_five(t_stack **stack_a, t_stack **stack_b)
     sort_three(stack_a);
     pa(stack_b, stack_a);
     pa(stack_b, stack_a);
+}
+
+int is_sorted(t_stack *stack)
+{
+    while (stack->next)
+    {
+        if (stack->data < stack->next->data)
+            stack = stack->next;
+        else
+            return (0);
+    }
+    return (1);
 }

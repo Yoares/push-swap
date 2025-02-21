@@ -33,7 +33,8 @@ void 	pb(t_stack **stack_a, t_stack **stack_b);
 void    sort_three(t_stack **stack);
 void    sort_five(t_stack **stack_a, t_stack **stack_b);
 int     search_min_num(t_stack *stack);
-
+int 	is_sorted(t_stack *stack);
+void 	free_split(char **split);
 // parcing func
 int     parc_args(int ac, char **av, t_stack **stack_a);
 

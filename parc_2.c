@@ -31,27 +31,52 @@ static int	check_duplicat(t_stack *stack, int num)
 	}
 	return (0);
 }
+static int set_stack_a(char **vals, t_stack **stack_a)
+{
+	int		i;
+	long	value;
+	t_stack *new;
+	i = -1;
+	while (vals[++i] != NULL)
+	{
+		if (valid_num(vals[i]))
+		{
+			value = ft_atoi(vals[i]);
+			if (value > INT_MAX || value < INT_MIN)
+				return (0);
+			if (!check_duplicat(*stack_a, (int)value))
+			{
+				new = lstnew((int)value);
+				if (!new)
+					return (0);
+				addback(stack_a, new);
+			}
+			else
+				return (0);
+		}
+		else
+			return (0);
+	}
+	return (1);
+}
 
 int	parc_args(int ac, char **av, t_stack **stack_a)
 {
 	int		i;
-	long	num;
-	t_stack	*new_node;
+	char 	**vals;
 
 	i = 1;
 	while(i < ac)
 	{
-		if (!valid_num(av[i]))
-			return (0);
-		num = ft_atoi(av[i]);
-		if (num > INT_MAX || num < INT_MIN)
-			return (0);
-		if (check_duplicat(*stack_a, (int)num))
-			return (0);
-		new_node = lstnew((int)num);
-		if (!new_node)
-			return (0);
-		addback(stack_a, new_node);
+		vals = ft_split(av[i], ' ');
+		if (!vals)
+		{
+			free_split(vals);
+			error_exit(stack_a, NULL);
+		}
+		if (!set_stack_a(vals, stack_a))
+			error_exit(stack_a, NULL);
+		free_split(vals);
 		i++;
 	}
 	return (1);
