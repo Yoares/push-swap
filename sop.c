@@ -63,23 +63,16 @@ void push_stack(t_stack **stack_a, t_stack **stack_b)
 }
 void pa(t_stack **stack_a, t_stack **stack_b)
 {
-    t_stack *tmp;
-
-  if (!stack_a || !*stack_a)
+    if (!stack_b || !*stack_b)  // Check stack_b, not stack_a
         return;
-    tmp = *stack_a;
-    *stack_a = (*stack_a)->next;
-    addfront(stack_b, tmp);
+    push_stack(stack_b, stack_a);  // Push from B to A
 }
+
 void pb(t_stack **stack_a, t_stack **stack_b)
 {
-    t_stack *tmp;
-
-  if (!stack_a || !*stack_a)
+    if (!stack_a || !*stack_a)
         return;
-    tmp = *stack_a;
-    *stack_a = (*stack_a)->next;
-    addfront(stack_b, tmp);
+    push_stack(stack_a, stack_b);  // Push from A to B
 }
 
 void print(t_stack *stack)
@@ -140,9 +133,9 @@ void sort_five(t_stack **stack_a, t_stack **stack_b)
         {
             rra(stack_a);
         }
-        push_stack(stack_a, stack_b);
+        pb(stack_a, stack_b);
     }
     sort_three(stack_a);
-    push_stack(stack_b, stack_a);
-    push_stack(stack_b, stack_a);
+    pa(stack_b, stack_a);
+    pa(stack_b, stack_a);
 }
