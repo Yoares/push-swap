@@ -12,8 +12,6 @@ int main(int ac, char **av)
 
     if (!parc_args(ac, av, &stack_a))
         error_exit(&stack_a, &stack_b);
-
-    // Choose sorting method based on size
     int size = lstsize(stack_a);
     if (size <= 3)
         sort_three(&stack_a);
@@ -21,8 +19,6 @@ int main(int ac, char **av)
         sort_five(&stack_a, &stack_b);
     else
         range_sort(&stack_a, &stack_b);
-
-    // Cleanup
     free_stack(&stack_a);
     free_stack(&stack_b);
     return (0);

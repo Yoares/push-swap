@@ -4,7 +4,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = sop.c stack_func.c parc.c parc_2.c main.c range_sort.c
+SRCS = sop.c stack_func.c parc.c parc_2.c main.c range_sort.c op.c
 
 OBJS = $(SRCS:.c=.o)
 

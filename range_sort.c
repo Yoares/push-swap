@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-// Calculate the optimal range based on stack size
 int get_range(int size)
 {
 	if (size <= 100)
@@ -11,7 +10,6 @@ int get_range(int size)
 		return (size / 20);
 }
 
-// Index the stack from 0 to stack_size - 1
 void index_stack(t_stack **stack)
 {
     t_stack *current;
@@ -34,7 +32,6 @@ void index_stack(t_stack **stack)
     }
 }
 
-// Push numbers in the current range from stack_a to stack_b
 void push_range(t_stack **stack_a, t_stack **stack_b, int start, int end)
 {
     int size;
@@ -55,7 +52,6 @@ void push_range(t_stack **stack_a, t_stack **stack_b, int start, int end)
     }
 }
 
-// Main range sort algorithm
 void range_sort(t_stack **stack_a, t_stack **stack_b)
 {
     int stack_size;
@@ -63,29 +59,22 @@ void range_sort(t_stack **stack_a, t_stack **stack_b)
     int start;
     int max_num;
 
-    // Initialize all indexes to -1
     t_stack *temp = *stack_a;
     while (temp)
     {
         temp->index = -1;
         temp = temp->next;
     }
-
-    // Index the stack
     index_stack(stack_a);
-    
     stack_size = lstsize(*stack_a);
     range = get_range(stack_size);
     start = 0;
 
-    // Push numbers to stack_b in ranges
     while (*stack_a)
     {
         push_range(stack_a, stack_b, start, start + range);
         start += range;
     }
-
-    // Push back to stack_a in descending order
     max_num = stack_size - 1;
     while (*stack_b)
     {

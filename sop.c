@@ -1,56 +1,5 @@
 #include "push_swap.h"
 
-void ra(t_stack **stack)
-{
-    t_stack *tmp;
-
-    tmp = *stack;
-    *stack = (*stack)->next;
-    tmp->next = NULL;
-    addback(stack, tmp);
-}
-
-void rb(t_stack **stack)
-{
-    t_stack *tmp;
-
-    tmp = *stack;
-    *stack = (*stack)->next;
-    tmp->next = NULL;
-    addback(stack, tmp);
-}
-
-void rra(t_stack **stack)
-{
-    t_stack *tmp1;
-    t_stack *tmp2;
-    if (!stack || !*stack || !(*stack)->next)
-        return; 
-    tmp1 = *stack;
-    while (tmp1->next->next)
-    {
-        tmp1 = tmp1->next;
-    }
-    tmp2 = tmp1->next;
-    tmp1->next =  NULL;
-    addfront(stack, tmp2);
-}
-
-void sa(t_stack **stack)
-{
-    t_stack  *first;
-    t_stack *last;
-
-    if (!stack || !*stack || !(*stack)->next)
-        return; 
-    first = *stack;
-    last =  first->next;
-
-    first->next = last->next;
-    last->next = first;
-    *stack = last;
-}
-
 void push_stack(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack *tmp;
@@ -60,28 +9,6 @@ void push_stack(t_stack **stack_a, t_stack **stack_b)
     tmp = *stack_a;
     *stack_a = (*stack_a)->next;
     addfront(stack_b, tmp);
-}
-void pa(t_stack **stack_a, t_stack **stack_b)
-{
-    if (!stack_b || !*stack_b)  // Check stack_b, not stack_a
-        return;
-    push_stack(stack_b, stack_a);  // Push from B to A
-}
-
-void pb(t_stack **stack_a, t_stack **stack_b)
-{
-    if (!stack_a || !*stack_a)
-        return;
-    push_stack(stack_a, stack_b);  // Push from A to B
-}
-
-void print(t_stack *stack)
-{
-    while (stack)
-    {
-        printf("%d\n", stack->data);
-        stack = stack->next;
-    }
 }
 
 void sort_three(t_stack **stack)
