@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void rotate(t_stack **stack)
+void ra(t_stack **stack)
 {
     t_stack *tmp;
 
@@ -10,7 +10,17 @@ void rotate(t_stack **stack)
     addback(stack, tmp);
 }
 
-void rev_rotate(t_stack **stack)
+void rb(t_stack **stack)
+{
+    t_stack *tmp;
+
+    tmp = *stack;
+    *stack = (*stack)->next;
+    tmp->next = NULL;
+    addback(stack, tmp);
+}
+
+void rra(t_stack **stack)
 {
     t_stack *tmp1;
     t_stack *tmp2;
@@ -51,6 +61,26 @@ void push_stack(t_stack **stack_a, t_stack **stack_b)
     *stack_a = (*stack_a)->next;
     addfront(stack_b, tmp);
 }
+void pa(t_stack **stack_a, t_stack **stack_b)
+{
+    t_stack *tmp;
+
+  if (!stack_a || !*stack_a)
+        return;
+    tmp = *stack_a;
+    *stack_a = (*stack_a)->next;
+    addfront(stack_b, tmp);
+}
+void pb(t_stack **stack_a, t_stack **stack_b)
+{
+    t_stack *tmp;
+
+  if (!stack_a || !*stack_a)
+        return;
+    tmp = *stack_a;
+    *stack_a = (*stack_a)->next;
+    addfront(stack_b, tmp);
+}
 
 void print(t_stack *stack)
 {
@@ -60,8 +90,6 @@ void print(t_stack *stack)
         stack = stack->next;
     }
 }
-
-
 
 void sort_three(t_stack **stack)
 {
@@ -75,18 +103,12 @@ void sort_three(t_stack **stack)
 
     if (a > b && a > c)
     {
-        rotate(stack);
+        ra(stack);
     }
     else if (b > a && b > c)
-    {
-        // rotate(stack);
-        // rotate(stack);
-        rev_rotate(stack);
-    }
-
+        rra(stack);
     a = (*stack)->data;
     b = (*stack)->next->data;
-
     if (a > b)
         sa(stack);
 }
@@ -116,7 +138,7 @@ void sort_five(t_stack **stack_a, t_stack **stack_b)
         min = search_min_num(*stack_a);
         while (((*stack_a)->data) != min)
         {
-            rev_rotate(stack_a);
+            rra(stack_a);
         }
         push_stack(stack_a, stack_b);
     }
