@@ -62,3 +62,28 @@ t_stack *lstnew(int node)
     new_node->next = NULL;
     return new_node;
 }
+
+void	remove_node(t_stack **stack, int data)
+{
+	t_stack *tmp;
+	t_stack *prev;
+
+	if (!stack || !*stack)
+		return;
+	tmp = *stack;
+	if (tmp->data == data)
+	{
+		*stack = tmp->next;
+		free(tmp);
+		return;
+	}
+	while (tmp && tmp->data != data)
+	{
+		prev = tmp;
+		tmp = tmp->next;
+	}
+	if (!tmp)
+		return;
+	prev->next = tmp->next;
+	free(tmp);
+}

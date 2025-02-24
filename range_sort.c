@@ -1,20 +1,25 @@
 #include "push_swap.h"
 
-int	set_array(t_stack *stack_a)
+int	*set_arr(t_stack *stack_a, int size)
 {
 	int	i;
 	int *arr;
+
+	arr = malloc(size * sizeof(int));
+	if (!arr)
+		return(0);
 	i = 0;
 	while (stack_a)
 	{
 		arr[i++] = stack_a->data;
 		stack_a = stack_a->next;
 	}
+	return(arr);
 }
 
 void	swap(int *x, int *y)
 {
-	int *tmp;
+	int tmp;
 
 	tmp = *x;
 	*x = *y;
@@ -33,16 +38,14 @@ void	sort_arr(int *arr, int size)
 		while (j < size - i - 1)
 		{
 			if (arr[j] > arr[j + 1])
-			{
 				swap(&arr[j], &arr[j + 1]);
-			}
 			j++;
 		}
 		i++;
 	}
 }
 
-int	get_index(t_stack **stack)
+void	get_index(t_stack **stack)
 {
 	int *arr;
 	int	i;
@@ -50,9 +53,9 @@ int	get_index(t_stack **stack)
 	t_stack *tmp;
 
 	size = lstsize(*stack);
-	arr = set_array(stack);
+	arr = set_arr(*stack, size);
+	sort_arr(arr, size);
 	tmp = *stack;
-
 	while (tmp)
 	{
 		i = 0;
@@ -66,5 +69,50 @@ int	get_index(t_stack **stack)
 			i++;
 		}
 		tmp = tmp->next;
+	}
+	free(arr);
+}
+
+int	find_largest_index(t_stack *stack)
+{
+	int	max;
+
+	t_stack *tmp;
+
+	if (!stack)
+        return(-1);
+	max = 0;
+	tmp = stack;
+	while(tmp)
+	{
+		if (tmp->index > max)
+		{
+			max = tmp->index;
+		}
+		tmp = tmp->next;
+	}
+	return (max);
+}
+
+void	dev_stack(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack *tmp;
+	t_stack *next;
+	int	max_index;
+	int	dev;
+
+	tmp = *stack_a;
+	get_index(stack_a);
+	max_index = find_largest_index(*stack_a);
+	dev = max_index / 2;
+	while (tmp)
+	{
+		next = tmp->next;
+		if (tmp->index < dev)
+		{
+			remove_node(stack_a, tmp->data);            
+		}
+		else
+			tmp = next;
 	}
 }
