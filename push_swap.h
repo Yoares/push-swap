@@ -35,6 +35,7 @@ void    sort_five(t_stack **stack_a, t_stack **stack_b);
 int     search_min_num(t_stack *stack);
 int 	is_sorted(t_stack *stack);
 void	remove_node(t_stack **stack, int data);
+void	dev_stack(t_stack **stack_a, t_stack **stack_b);
 // parcing func
 int     parc_args(int ac, char **av, t_stack **stack_a);
 

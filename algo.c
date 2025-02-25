@@ -98,9 +98,10 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack *tmp;
 	t_stack *next;
-	int	max_index;
-	int	dev;
+	int	(i), (size), (max_index), (dev);
 
+	i = 0;
+	size = lstsize(*stack_a); 
 	tmp = *stack_a;
 	get_index(stack_a);
 	max_index = find_largest_index(*stack_a);
@@ -115,5 +116,9 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 		else
 			tmp = next;
 	}
+	while (size - i > 3)
+	{
+		pb(stack_a, stack_b);
+		i++;
+	}
 }
-
