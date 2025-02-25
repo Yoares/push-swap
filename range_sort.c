@@ -109,8 +109,7 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 	{
 		next = tmp->next;
 		if (tmp->index < dev)
-		{
-			         
+		{  
 		}
 		else
 			tmp = next;
