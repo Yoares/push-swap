@@ -20,9 +20,6 @@ static	int	valid_num(char *av)
 
 static int	check_duplicat(t_stack *stack, int num)
 {
-	int	i;
-
-	i = 0;
 	while(stack)
 	{
 		if (stack->data == num)
