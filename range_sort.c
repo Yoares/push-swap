@@ -110,7 +110,7 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 		next = tmp->next;
 		if (tmp->index < dev)
 		{
-			remove_node(stack_a, tmp->data);            
+			         
 		}
 		else
 			tmp = next;
