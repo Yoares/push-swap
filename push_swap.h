@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/28 15:30:06 by ykhoussi          #+#    #+#             */
+/*   Updated: 2025/02/28 15:30:06 by ykhoussi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP
 # define PUSH_SWAP
 
@@ -11,39 +23,37 @@ typedef struct s_stack
 {
 	int				data;
 	int				value;
-	int             index;
+	int				index;
 	struct s_stack	*next;
-}					t_stack;
+}	t_stack;
 
-void    addfront(t_stack **list, t_stack *new_node);
-void    addback(t_stack **list, t_stack *node);
-int     lstsize(t_stack *stack);
-t_stack  *lstnew(int node);
+void	addfront(t_stack **list, t_stack *new_node);
+void	addback(t_stack **list, t_stack *node);
+int		lstsize(t_stack *stack);
+t_stack	*lstnew(int node);
 
 // op func
-void    push_stack(t_stack **stack_a, t_stack **stack_b);
-void    ra(t_stack **stack);
-void    rb(t_stack **stack);
-void    sa(t_stack **stack);
+void	push_stack(t_stack **stack_a, t_stack **stack_b);
+void	ra(t_stack **stack);
+void	rb(t_stack **stack);
+void	sa(t_stack **stack);
 void	rra(t_stack **stack);
-void 	pa(t_stack **stack_a, t_stack **stack_b);
-void 	pb(t_stack **stack_a, t_stack **stack_b);
+void	pa(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_a, t_stack **stack_b);
 
 // sort function
-void    sort_three(t_stack **stack);
-void    sort_five(t_stack **stack_a, t_stack **stack_b);
-int     search_min_num(t_stack *stack);
-int 	is_sorted(t_stack *stack);
+void	sort_three(t_stack **stack);
+void	sort_five(t_stack **stack_a, t_stack **stack_b);
+int		search_min_num(t_stack *stack);
+int		is_sorted(t_stack *stack);
 void	remove_node(t_stack **stack, int data);
 void	dev_stack(t_stack **stack_a, t_stack **stack_b);
 // parcing func
-int     parc_args(int ac, char **av, t_stack **stack_a);
+int		parc_args(int ac, char **av, t_stack **stack_a);
 
-//error handeling
+// error handeling
 void	free_stack(t_stack **stack);
 void	error_exit(t_stack **stack_a, t_stack **stack_b);
-void 	free_split(char **split);
-
-// range algho
+void	free_split(char **split);
 
 #endif

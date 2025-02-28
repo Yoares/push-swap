@@ -1,25 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/28 15:29:23 by ykhoussi          #+#    #+#             */
+/*   Updated: 2025/02/28 15:29:23 by ykhoussi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	*set_arr(t_stack *stack_a, int size)
 {
 	int	i;
-	int *arr;
+	int	*arr;
 
 	arr = malloc(size * sizeof(int));
 	if (!arr)
-		return(0);
+		return (0);
 	i = 0;
 	while (stack_a)
 	{
 		arr[i++] = stack_a->data;
 		stack_a = stack_a->next;
 	}
-	return(arr);
+	return (arr);
 }
 
 void	swap(int *x, int *y)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *x;
 	*x = *y;
@@ -47,10 +59,10 @@ void	sort_arr(int *arr, int size)
 
 void	get_index(t_stack **stack)
 {
-	int *arr;
-	int	i;
-	int size;
-	t_stack *tmp;
+	int		*arr;
+	int		i;
+	int		size;
+	t_stack	*tmp;
 
 	size = lstsize(*stack);
 	arr = set_arr(*stack, size);
@@ -64,7 +76,7 @@ void	get_index(t_stack **stack)
 			if (arr[i] == tmp->data)
 			{
 				tmp->index = i + 1;
-				break;
+				break ;
 			}
 			i++;
 		}
@@ -75,15 +87,14 @@ void	get_index(t_stack **stack)
 
 int	find_largest_index(t_stack *stack)
 {
-	int	max;
-
+	int		max;
 	t_stack *tmp;
 
 	if (!stack)
-        return(-1);
+		return (-1);
 	max = 0;
 	tmp = stack;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->index > max)
 		{
@@ -96,12 +107,12 @@ int	find_largest_index(t_stack *stack)
 
 void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *tmp;
-	t_stack *next;
-	int	(i), (size), (max_index), (dev);
+	t_stack	*tmp;
+	t_stack	*next;
+	int(i), (size), (max_index), (dev);
 
 	i = 0;
-	size = lstsize(*stack_a); 
+	size = lstsize(*stack_a);
 	tmp = *stack_a;
 	get_index(stack_a);
 	max_index = find_largest_index(*stack_a);

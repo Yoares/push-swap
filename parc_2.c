@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parc_2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/28 15:29:50 by ykhoussi          #+#    #+#             */
+/*   Updated: 2025/02/28 15:29:50 by ykhoussi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static	int	valid_num(char *av)
@@ -18,9 +30,9 @@ static	int	valid_num(char *av)
 	return (1);
 }
 
-static int	check_duplicat(t_stack *stack, int num)
+static	int	check_duplicat(t_stack *stack, int num)
 {
-	while(stack)
+	while (stack)
 	{
 		if (stack->data == num)
 			return (1);
@@ -28,12 +40,13 @@ static int	check_duplicat(t_stack *stack, int num)
 	}
 	return (0);
 }
-static int set_stack_a(char **vals, t_stack **stack_a)
+
+static	int	set_stack_a(char **vals, t_stack **stack_a)
 {
-	int		i;
 	long	value;
-	t_stack *new;
-	i = -1;
+	t_stack	*new;
+
+	int (i) = -1;
 	while (vals[++i] != NULL)
 	{
 		if (valid_num(vals[i]))
@@ -60,10 +73,10 @@ static int set_stack_a(char **vals, t_stack **stack_a)
 int	parc_args(int ac, char **av, t_stack **stack_a)
 {
 	int		i;
-	char 	**vals;
+	char	**vals;
 
 	i = 1;
-	while(i < ac)
+	while (i < ac)
 	{
 		vals = ft_split(av[i], ' ');
 		if (!vals)

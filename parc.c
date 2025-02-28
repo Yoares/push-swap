@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parc.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/28 15:29:58 by ykhoussi          #+#    #+#             */
+/*   Updated: 2025/02/28 15:29:58 by ykhoussi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	free_stack(t_stack **stack)
@@ -15,18 +27,17 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-void free_split(char **split)
+void	free_split(char **split)
 {
-    int (i) = 0;
-
-    if (!split)
-        return;
-    while (split[i])
-    {
-        free(split[i]);
-        i++;
-    }
-    free(split);
+	int (i) = 0;
+	if (!split)
+		return ;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
 }
 
 void	error_exit(t_stack **stack_a, t_stack **stack_b)
