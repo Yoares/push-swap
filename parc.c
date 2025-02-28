@@ -29,7 +29,9 @@ void	free_stack(t_stack **stack)
 
 void	free_split(char **split)
 {
-	int (i) = 0;
+	int	i;
+
+	i = 0;
 	if (!split)
 		return ;
 	while (split[i])

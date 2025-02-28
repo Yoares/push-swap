@@ -36,7 +36,7 @@ int	main(int ac, char **av)
 	else if (lstsize(stack_a) <= 5)
 		sort_five(&stack_a, &stack_b);
 	else
-		range_sort(&stack_a, &stack_b);
+		sorting_st(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 }
