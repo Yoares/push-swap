@@ -54,9 +54,13 @@ int		find_largest_index(t_stack *stack);
 void	get_index(t_stack **stack);
 void	sort_arr(int *arr, int size);
 int		*set_arr(t_stack *stack_a, int size);
+void	set_position(t_stack **stack);
 
 // parcing func
 int		parc_args(int ac, char **av, t_stack **stack_a);
+
+// algo
+void	sorting_st(t_stack **stack_a, t_stack **stack_b);
 
 // error handeling
 void	free_stack(t_stack **stack);

@@ -88,7 +88,7 @@ void	get_index(t_stack **stack)
 int	find_largest_index(t_stack *stack)
 {
 	int		max;
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!stack)
 		return (-1);
@@ -109,8 +109,8 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
 	t_stack	*next;
-	int(i), (size), (max_index), (dev);
 
+	int (i), (size), (max_index), (dev);
 	i = 0;
 	size = lstsize(*stack_a);
 	tmp = *stack_a;
