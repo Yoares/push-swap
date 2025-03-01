@@ -24,6 +24,7 @@ typedef struct s_stack
 	int				data;
 	int				tarif_a;
 	int				tarif_b;
+	int				targ_pos;
 	int				pos;
 	int				index;
 	struct s_stack	*next;
