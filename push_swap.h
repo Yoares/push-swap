@@ -73,5 +73,6 @@ void	sorting_st(t_stack **stack_a, t_stack **stack_b);
 void	free_stack(t_stack **stack);
 void	error_exit(t_stack **stack_a, t_stack **stack_b);
 void	free_split(char **split);
+void print_stack(t_stack *stack);
 
 #endif

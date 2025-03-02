@@ -85,48 +85,35 @@ void	get_index(t_stack **stack)
 	free(arr);
 }
 
-// int	find_largest_index(t_stack *stack)
-// {
-// 	int		max;
-// 	t_stack	*tmp;
-
-// 	if (!stack)
-// 		return (-1);
-// 	max = 0;
-// 	tmp = stack;
-// 	while (tmp)
-// 	{
-// 		if (tmp->index > max)
-// 		{
-// 			max = tmp->index;
-// 		}
-// 		tmp = tmp->next;
-// 	}
-// 	return (max);
-// }
-
 void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
 
-	int (i), (size), (dev);
+	int (i), (size), (dev), (pushed);
 	i = 0;
 	size = lstsize(*stack_a);
 	tmp = *stack_a;
+	pushed = 0;
 	get_index(stack_a);
-	// max_index = find_largest_index(*stack_a);
 	dev = size / 2;
-	while (tmp)
+	while (i < size - 1 && pushed < size / 2 && tmp)
 	{
 		if (tmp->index <= dev)
+		{
 			pb(stack_a, stack_b);
+			pushed++;
+		}
 		else if (tmp->index > dev)
 			ra(stack_a, 1);
 		tmp = tmp->next;
-	}
-	while (size - i > 3)
-	{
-		pb(stack_a, stack_b);
 		i++;
 	}
+	size = lstsize(*stack_a);
+	while (size > 3)
+	{
+		pb(stack_a, stack_b);
+		size--;
+	}
+	print_stack(*stack_a);
+	print_stack(*stack_b);
 }

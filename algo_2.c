@@ -62,11 +62,10 @@ void	set_target_position(t_stack **stack_a, t_stack **stack_b)
 void	sorting_st(t_stack **stack_a, t_stack **stack_b)
 {
 	dev_stack(stack_a, stack_b);
-	while (*stack_b)
+	while (stack_b)
 	{
 		set_target_position(stack_a, stack_b);
 		set_cost(stack_a, stack_b);
 		short_path(stack_a, stack_b);
 	}
-	
 }
