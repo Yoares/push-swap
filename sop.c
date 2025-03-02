@@ -34,9 +34,9 @@ void	sort_three(t_stack **stack)
 	if (lstsize(*stack) == 3)
 		c = (*stack)->next->next->data;
 	if (a > b && a > c)
-		ra(stack);
+		ra(stack, 1);
 	else if (b > a && b > c)
-		rra(stack);
+		rra(stack, 1);
 	a = (*stack)->data;
 	b = (*stack)->next->data;
 	if (a > b)
@@ -68,13 +68,13 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 		min = search_min_num(*stack_a);
 		while (((*stack_a)->data) != min)
 		{
-			rra(stack_a);
+			rra(stack_a, 1);
 		}
 		pb(stack_a, stack_b);
 	}
 	sort_three(stack_a);
-	pa(stack_b, stack_a);
-	pa(stack_b, stack_a);
+	pa(stack_b, stack_a, 1);
+	pa(stack_b, stack_a, 1);
 }
 
 int	is_sorted(t_stack *stack)

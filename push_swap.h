@@ -45,6 +45,7 @@ void	rrb(t_stack **stack, int mark);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 void	pa(t_stack **stack_a, t_stack **stack_b, int mark);
 void	pb(t_stack **stack_a, t_stack **stack_b);
+void	rr(t_stack **stack_a, t_stack **stack_b, int mark);
 
 // sort function
 void	sort_three(t_stack **stack);
@@ -58,6 +59,9 @@ void	get_index(t_stack **stack);
 void	sort_arr(int *arr, int size);
 int		*set_arr(t_stack *stack_a, int size);
 void	set_position(t_stack **stack);
+void	set_cost(t_stack **stack_a, t_stack **stack_b);
+void	short_path(t_stack **stack_a, t_stack **stack_b);
+void	apply_rotation(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif_b);
 
 // parcing func
 int		parc_args(int ac, char **av, t_stack **stack_a);

@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 14:36:58 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/01 15:02:44 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/02 21:41:24 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	short_path(t_stack **stack_a, t_stack **stack_b)
 	tarif_a = 0;
 	tarif_b = 0;
 	min = INT_MAX;
-	tmp = stack_b;
+	tmp = *stack_b;
 	while (tmp)
 	{
 		total_t = val_abs(tmp->tarif_a) + val_abs(tmp->tarif_b);
@@ -85,7 +85,7 @@ void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif
 }
 void	apply_rotation(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif_b)
 {
-	rotate_stack(stack_a, stack_b, &tarif_a, &tarif_b);
+	rotate_stack(stack_a, stack_b, tarif_a, tarif_b);
 	while (tarif_b < 0)
 	{
 		rrb(stack_b, 1);

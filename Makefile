@@ -4,7 +4,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = sop.c stack_func.c parc.c parc_2.c main.c algo.c algo_2.c op.c
+SRCS = sop.c stack_func.c parc.c parc_2.c main.c algo.c algo_2.c op.c get_cost.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -121,9 +121,10 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 	write(1, "rrr\n", 4);
 }
 
-void	rr(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b, int mark)
 {
 	ra(stack_a, 0);
 	rb(stack_b, 0);
-	write(1, "rr\n", 3);
+	if (mark)
+		write(1, "rr\n", 3);
 }
