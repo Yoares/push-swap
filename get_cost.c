@@ -35,3 +35,76 @@ void	set_cost(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
+int	val_abs(int	nb)
+{
+	if (nb > 0)
+		return (nb);
+	return (-nb);
+}
+
+void	short_path(t_stack **stack_a, t_stack **stack_b)
+{
+	int	tarif_a;
+	int	tarif_b;
+	int	total_t;
+	int	min;
+	t_stack	*tmp;
+
+	tarif_a = 0;
+	tarif_b = 0;
+	min = INT_MAX;
+	tmp = stack_b;
+	while (tmp)
+	{
+		total_t = val_abs(tmp->tarif_a) + val_abs(tmp->tarif_b);
+		if (total_t < min)
+		{
+			tarif_a = tmp->tarif_a;
+			tarif_b = tmp->tarif_b;
+			total_t = min;
+		}
+		tmp = tmp->next;
+	}
+	apply_rotation(stack_a, stack_b, &tarif_a, &tarif_b);
+}
+
+void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif_b)
+{
+	while (*tarif_a < 0 && *tarif_b < 0)
+	{
+		rrr(stack_a, stack_b);
+		(*tarif_a)++;
+		(*tarif_b)++;
+	}
+	while (*tarif_a > 0 && *tarif_b > 0)
+	{
+		rr(stack_a, stack_b, 1);
+		(*tarif_a)--;
+		(*tarif_b)--;
+	}
+}
+void	apply_rotation(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif_b)
+{
+	rotate_stack(stack_a, stack_b, &tarif_a, &tarif_b);
+	while (tarif_b < 0)
+	{
+		rrb(stack_b, 1);
+		tarif_b++;
+	}
+	while (tarif_b > 0)
+	{
+		rb(stack_b, 1);
+		tarif_b--;
+	}
+	while (tarif_a < 0)
+	{
+		rra(stack_a, 1);
+		tarif_a++;
+	}
+	while (tarif_a > 0)
+	{
+		ra(stack_a, 1);
+		tarif_a--;
+	}
+	pa(stack_a, stack_b, 1);
+}

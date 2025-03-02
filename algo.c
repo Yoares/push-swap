@@ -123,7 +123,7 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 		if (tmp->index <= dev)
 			pb(stack_a, stack_b);
 		else if (tmp->index > dev)
-			ra(stack_a);
+			ra(stack_a, 1);
 		else
 			tmp = next;
 	}
