@@ -134,3 +134,22 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 	}
 	
 }
+
+void	optimized_sort(t_stack **stack_a, t_stack **stack_b)
+{
+	dev_stack(stack_a, stack_b);
+	while (*stack_b)
+	{
+		set_target_position(stack_a, stack_b);
+		set_cost(stack_a, stack_b);
+		short_path(stack_a, stack_b);
+	}
+	while (!is_sorted(*stack_a))
+	{
+		ra(stack_a, 1);
+	}
+	while (lstsize(*stack_b))
+	{
+		pa(stack_a, stack_b, 1);
+	}
+}
