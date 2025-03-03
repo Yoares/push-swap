@@ -115,7 +115,7 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 	get_index(stack_a);
 	size = lstsize(*stack_a);
 	pushed = 0;
-	mid = size / 2;
+	mid = size  / 2  - 1  ;
 	while (pushed < mid && size < 3 )
 	{
 		if ((*stack_a)->index <= mid)
