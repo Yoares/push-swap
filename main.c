@@ -12,16 +12,6 @@
 
 #include "push_swap.h"
 
-void print_stack(t_stack *stack)
-{
-	while(stack)
-	{
-		printf("%d->", stack->data);
-		stack = stack->next;
-	}
-	printf("NULL\n");
-}
-
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
@@ -47,8 +37,6 @@ int	main(int ac, char **av)
 		sort_five(&stack_a, &stack_b);
 	else
 		sorting_st(&stack_a, &stack_b);
-	print_stack(stack_a);
-	print_stack(stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 }

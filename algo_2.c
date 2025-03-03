@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo_2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/03 16:32:39 by ykhoussi          #+#    #+#             */
+/*   Updated: 2025/03/03 16:33:10 by ykhoussi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	set_position(t_stack **stack)
@@ -17,10 +29,10 @@ void	set_position(t_stack **stack)
 
 int	target_pos(t_stack **stack_a, int index, int targ_index, int tar_pos)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = *stack_a;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->index > index && tmp->index < targ_index)
 		{
@@ -60,6 +72,7 @@ void	set_target_position(t_stack **stack_a, t_stack **stack_b)
 		tmp_b = tmp_b->next;
 	}
 }
+
 void	sorting_st(t_stack **stack_a, t_stack **stack_b)
 {
 	dev_stack(stack_a, stack_b);

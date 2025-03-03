@@ -17,7 +17,7 @@ void	push_stack(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*tmp;
 
 	if (!stack_a || !*stack_a)
-		return;
+		return ;
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
 	addfront(stack_b, tmp);
@@ -38,6 +38,7 @@ int	get_max_indx(t_stack *st)
 	}
 	return (max_indx);
 }
+
 void	sort_three(t_stack **st)
 {
 	int	max_idx;
@@ -52,8 +53,6 @@ void	sort_three(t_stack **st)
 	if ((*st)->index > (*st)->next->index)
 		sa(st);
 }
-
-
 
 int	search_min_num(t_stack *stack)
 {
@@ -70,7 +69,6 @@ int	search_min_num(t_stack *stack)
 	}
 	return (min);
 }
-
 
 int	search_min_pos(t_stack *stack)
 {

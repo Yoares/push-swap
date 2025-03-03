@@ -45,8 +45,9 @@ static	int	set_stack_a(char **vals, t_stack **stack_a)
 {
 	long	value;
 	t_stack	*new;
+	int		i;
 
-	int i = 0;
+	i = 0;
 	while (vals[i] != NULL)
 	{
 		if (valid_num(vals[i]))

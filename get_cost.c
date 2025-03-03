@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 14:36:58 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/03 16:01:03 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/03 16:28:59 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	set_cost(t_stack **stack_a, t_stack **stack_b)
 {
-	int	size_a;
-	int	size_b;
-	t_stack *tmp;
+	int		size_a;
+	int		size_b;
+	t_stack	*tmp;
 
 	tmp = *stack_b;
 	size_b = lstsize(*stack_b);
 	size_a = lstsize(*stack_a);
 	while (tmp)
 	{
-		if(tmp->pos > size_b / 2)
+		if (tmp->pos > size_b / 2)
 			tmp->tarif_b = -(size_b - tmp->pos);
 		else
 			tmp->tarif_b = tmp->pos;
@@ -44,9 +44,9 @@ int	val_abs(int	nb)
 
 void	short_path(t_stack **stack_a, t_stack **stack_b)
 {
-	int	tarif_a;
-	int	tarif_b;
-	int	min;
+	int		tarif_a;
+	int		tarif_b;
+	int		min;
 	t_stack	*tmp;
 
 	tarif_a = 0;
@@ -66,7 +66,8 @@ void	short_path(t_stack **stack_a, t_stack **stack_b)
 	apply_rotation(stack_a, stack_b, tarif_a, tarif_b);
 }
 
-void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif_b)
+void	rotate_stack(t_stack **stack_a, t_stack **stack_b,
+			int *tarif_a, int *tarif_b)
 {
 	while (*tarif_a < 0 && *tarif_b < 0)
 	{
@@ -82,7 +83,8 @@ void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif
 	}
 }
 
-void	apply_rotation(t_stack **stack_a, t_stack **stack_b, int tarif_a, int tarif_b)
+void	apply_rotation(t_stack **stack_a, t_stack **stack_b,
+			int tarif_a, int tarif_b)
 {
 	rotate_stack(stack_a, stack_b, &tarif_a, &tarif_b);
 	while (tarif_b < 0)
