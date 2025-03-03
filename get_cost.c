@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 14:36:58 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/02 23:38:25 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/03 02:39:50 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif
 		(*tarif_b)--;
 	}
 }
+
 void	apply_rotation(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif_b)
 {
 	rotate_stack(stack_a, stack_b, tarif_a, tarif_b);
