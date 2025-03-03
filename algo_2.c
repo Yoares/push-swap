@@ -70,5 +70,5 @@ void	sorting_st(t_stack **stack_a, t_stack **stack_b)
 		short_path(stack_a, stack_b);
 	}
 	if (!is_sorted(*stack_a))
-		sheft_stack(stack_a);
+		last_sort(stack_a);
 }

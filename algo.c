@@ -42,18 +42,23 @@ void	sort_arr(int *arr, int size)
 {
 	int	i;
 	int	j;
+	int	swap;
 
-	i = 0;
-	while (i < size - 1)
+	j = 0;
+	while (j < size - 1)
 	{
-		j = 0;
-		while (j < size - i - 1)
+		i = 0;
+		while (i < size - j - 1)
 		{
-			if (arr[j] > arr[j + 1])
-				swap(&arr[j], &arr[j + 1]);
-			j++;
+			if (arr[i] > arr[i + 1])
+			{
+				swap = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = swap;
+			}
+			i++;
 		}
-		i++;
+		j++;
 	}
 }
 
@@ -85,25 +90,26 @@ void	get_index(t_stack **stack)
 	free(arr);
 }
 
-void sheft_stack(t_stack **stack_a)
+void	last_sort(t_stack **a)
 {
-	int min_pos;
+	int	min_pos;
+	int	size;
 
-	min_pos = search_min_pos(*stack_a);
-	if (min_pos > lstsize(*stack_a) / 2)
+	size = lstsize(*a);
+	min_pos = search_min_pos(*a);
+	if (min_pos > size / 2)
 	{
-		min_pos -= lstsize(*stack_a) / 2+ 1 ;
-		while (min_pos > 0)
+		while (min_pos < size)
 		{
-			rra(stack_a, 1);
-			min_pos--;
+			rra(a, 1);
+			min_pos++;
 		}
 	}
 	else
 	{
 		while (min_pos > 0)
 		{
-			ra(stack_a, 1);
+			ra(a, 1);
 			min_pos--;
 		}
 	}
@@ -115,22 +121,20 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 	get_index(stack_a);
 	size = lstsize(*stack_a);
 	pushed = 0;
-	mid = size  / 2  - 1  ;
-	while (pushed < mid && size < 3 )
+	mid = size  / 2;
+	while (pushed < mid && size > 3 )
 	{
 		if ((*stack_a)->index <= mid)
 		{
 			pb(stack_a, stack_b);
 			pushed++;
 		}
-		else if ((*stack_a)->index > mid)
+		else
 			ra(stack_a, 1);	
-		size = lstsize(*stack_a);
 	}
-	while (size > 3)
+	while (size - pushed > 3)
 	{
 		pb(stack_a, stack_b);
-		size = lstsize(*stack_a);
+		pushed++;
 	}
-	
 }

@@ -23,25 +23,37 @@ void	push_stack(t_stack **stack_a, t_stack **stack_b)
 	addfront(stack_b, tmp);
 }
 
-void	sort_three(t_stack **stack)
+int	get_max_indx(t_stack *st)
 {
-	int	a;
-	int	b;
-	int	c;
+	int	max_indx;
 
-	a = (*stack)->data;
-	b = (*stack)->next->data;
-	if (lstsize(*stack) == 3)
-		c = (*stack)->next->next->data;
-	if (a > b && a > c)
-		ra(stack, 1);
-	else if (b > a && b > c)
-		rra(stack, 1);
-	a = (*stack)->data;
-	b = (*stack)->next->data;
-	if (a > b)
-		sa(stack);
+	if (!st)
+		return (0);
+	max_indx = st->index;
+	while (st)
+	{
+		if (st->index > max_indx)
+			max_indx = st->index;
+		st = st->next;
+	}
+	return (max_indx);
 }
+void	sort_three(t_stack **st)
+{
+	int	max_idx;
+
+	if (!(*st) || !(*st)->next || !(*st)->next->next)
+		return ;
+	max_idx = get_max_indx(*st);
+	if ((*st)->index == max_idx)
+		ra(st, 1);
+	else if ((*st)->next->index == max_idx)
+		rra(st, 1);
+	if ((*st)->index > (*st)->next->index)
+		sa(st);
+}
+
+
 
 int	search_min_num(t_stack *stack)
 {
@@ -64,10 +76,10 @@ int	search_min_pos(t_stack *stack)
 {
 	int	min;
 
-	min = stack->data;
+	min = stack->index;
 	while (stack)
 	{
-		if (stack->data < min)
+		if (stack->index <= min)
 		{
 			min = (stack)->pos;
 		}
