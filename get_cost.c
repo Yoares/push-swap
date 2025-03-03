@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 14:36:58 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/02 21:41:24 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/02 23:38:25 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	set_cost(t_stack **stack_a, t_stack **stack_b)
 	tmp = *stack_b;
 	size_b = lstsize(*stack_b);
 	size_a = lstsize(*stack_a);
-	
 	while (tmp)
 	{
 		if(tmp->pos > size_b / 2)
@@ -32,6 +31,7 @@ void	set_cost(t_stack **stack_a, t_stack **stack_b)
 			tmp->tarif_a = -(size_a - tmp->targ_pos);
 		else
 			tmp->tarif_a = tmp->targ_pos;
+		tmp = tmp->next;
 	}
 }
 
@@ -86,25 +86,25 @@ void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif
 void	apply_rotation(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif_b)
 {
 	rotate_stack(stack_a, stack_b, tarif_a, tarif_b);
-	while (tarif_b < 0)
+	while (*tarif_b < 0)
 	{
 		rrb(stack_b, 1);
-		tarif_b++;
+		(*tarif_b)++;
 	}
-	while (tarif_b > 0)
+	while (*tarif_b > 0)
 	{
 		rb(stack_b, 1);
-		tarif_b--;
+		(*tarif_b)--;
 	}
-	while (tarif_a < 0)
+	while (*tarif_a < 0)
 	{
 		rra(stack_a, 1);
-		tarif_a++;
+		(*tarif_a)++;
 	}
-	while (tarif_a > 0)
+	while (*tarif_a > 0)
 	{
 		ra(stack_a, 1);
-		tarif_a--;
+		(*tarif_a)--;
 	}
 	pa(stack_a, stack_b, 1);
 }

@@ -59,6 +59,23 @@ int	search_min_num(t_stack *stack)
 	return (min);
 }
 
+
+int	search_min_pos(t_stack *stack)
+{
+	int	min;
+
+	min = stack->data;
+	while (stack)
+	{
+		if (stack->data < min)
+		{
+			min = (stack)->pos;
+		}
+		stack = stack->next;
+	}
+	return (min);
+}
+
 void	sort_five(t_stack **stack_a, t_stack **stack_b)
 {
 	int	min;

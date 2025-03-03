@@ -114,6 +114,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 	write(1, "pb\n", 3);
 }
 
+
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rra(stack_a, 0);

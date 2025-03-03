@@ -85,35 +85,52 @@ void	get_index(t_stack **stack)
 	free(arr);
 }
 
+void sheft_stack(t_stack **stack_a)
+{
+	int min_pos;
+
+	min_pos = search_min_pos(*stack_a);
+	if (min_pos > lstsize(*stack_a) / 2)
+	{
+		min_pos -= lstsize(*stack_a) / 2+ 1 ;
+		while (min_pos > 0)
+		{
+			rra(stack_a, 1);
+			min_pos--;
+		}
+	}
+	else
+	{
+		while (min_pos > 0)
+		{
+			ra(stack_a, 1);
+			min_pos--;
+		}
+	}
+}
+
 void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*tmp;
-
-	int (i), (size), (dev), (pushed);
-	i = 0;
-	size = lstsize(*stack_a);
-	tmp = *stack_a;
-	pushed = 0;
+	int (size), (mid), (pushed);
 	get_index(stack_a);
-	dev = size / 2;
-	while (i < size - 1 && pushed < size / 2 && tmp)
+	size = lstsize(*stack_a);
+	pushed = 0;
+	mid = size / 2;
+	while (pushed < mid && size < 3 )
 	{
-		if (tmp->index <= dev)
+		if ((*stack_a)->index <= mid)
 		{
 			pb(stack_a, stack_b);
 			pushed++;
 		}
-		else if (tmp->index > dev)
-			ra(stack_a, 1);
-		tmp = tmp->next;
-		i++;
+		else if ((*stack_a)->index > mid)
+			ra(stack_a, 1);	
+		size = lstsize(*stack_a);
 	}
-	size = lstsize(*stack_a);
 	while (size > 3)
 	{
 		pb(stack_a, stack_b);
-		size--;
+		size = lstsize(*stack_a);
 	}
-	print_stack(*stack_a);
-	print_stack(*stack_b);
+	
 }

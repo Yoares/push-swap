@@ -54,7 +54,6 @@ int		search_min_num(t_stack *stack);
 int		is_sorted(t_stack *stack);
 void	remove_node(t_stack **stack, int data);
 void	dev_stack(t_stack **stack_a, t_stack **stack_b);
-int		find_largest_index(t_stack *stack);
 void	get_index(t_stack **stack);
 void	sort_arr(int *arr, int size);
 int		*set_arr(t_stack *stack_a, int size);
@@ -62,12 +61,13 @@ void	set_position(t_stack **stack);
 void	set_cost(t_stack **stack_a, t_stack **stack_b);
 void	short_path(t_stack **stack_a, t_stack **stack_b);
 void	apply_rotation(t_stack **stack_a, t_stack **stack_b, int *tarif_a, int *tarif_b);
-
+void sheft_stack(t_stack **stack_a);
 // parcing func
 int		parc_args(int ac, char **av, t_stack **stack_a);
 
 // algo
 void	sorting_st(t_stack **stack_a, t_stack **stack_b);
+int	search_min_pos(t_stack *stack);
 
 // error handeling
 void	free_stack(t_stack **stack);
