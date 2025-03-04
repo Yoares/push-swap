@@ -8,7 +8,7 @@ NAME_B = checker
 
 SRCS = sop.c stack_func.c parc.c parc_2.c main.c algo.c algo_2.c op.c get_cost.c
 
-SRCS_B = sop.c stack_func.c parc.c parc_2.c main.c algo.c algo_2.c op.c get_cost.c checker.c checker.h
+SRCS_B = sop.c stack_func.c parc.c parc_2.c main.c algo.c algo_2.c op.c get_cost.c checker_s/checker_p.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -24,7 +24,7 @@ all: $(NAME)
 $(LIBFT):
 	@make -C $(LIBFT_DIR)
 
-bonus: $(PROG_B)
+bonus: $(NAME_B)
 
 $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
