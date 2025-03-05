@@ -39,12 +39,12 @@ t_stack	*lstnew(int node);
 void	push_stack(t_stack **stack_a, t_stack **stack_b);
 void	ra(t_stack **stack, int mark);
 void	rb(t_stack **stack, int mark);
-void	sa(t_stack **stack);
+void	sa(t_stack **stack, int mark);
 void	rra(t_stack **stack, int mark);
 void	rrb(t_stack **stack, int mark);
-void	rrr(t_stack **stack_a, t_stack **stack_b);
+void	rrr(t_stack **stack_a, t_stack **stack_b, int mark);
 void	pa(t_stack **stack_a, t_stack **stack_b, int mark);
-void	pb(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_a, t_stack **stack_b, int mark);
 void	rr(t_stack **stack_a, t_stack **stack_b, int mark);
 
 // sort function

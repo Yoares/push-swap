@@ -6,11 +6,11 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:17:00 by ykhoussi          #+#    #+#             */
-/*   Updated: 2024/12/07 21:42:45 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/05 21:26:16 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "checker_h.h"
 
 void	ft_free(char **buff)
 {

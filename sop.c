@@ -51,7 +51,7 @@ void	sort_three(t_stack **st)
 	else if ((*st)->next->index == max_idx)
 		rra(st, 1);
 	if ((*st)->index > (*st)->next->index)
-		sa(st);
+		sa(st, 1);
 }
 
 int	search_min_num(t_stack *stack)
@@ -97,7 +97,7 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 		{
 			rra(stack_a, 1);
 		}
-		pb(stack_a, stack_b);
+		pb(stack_a, stack_b, 1);
 	}
 	sort_three(stack_a);
 	pa(stack_b, stack_a, 1);

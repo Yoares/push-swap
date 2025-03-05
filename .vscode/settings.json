@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "checker_h.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "push_swap.h": "c",
+        "libft.h": "c"
     }
 }

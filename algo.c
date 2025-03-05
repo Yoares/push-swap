@@ -126,7 +126,7 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 	{
 		if ((*stack_a)->index <= mid)
 		{
-			pb(stack_a, stack_b);
+			pb(stack_a, stack_b, 1);
 			pushed++;
 		}
 		else
@@ -134,7 +134,7 @@ void	dev_stack(t_stack **stack_a, t_stack **stack_b)
 	}
 	while (size - pushed > 3)
 	{
-		pb(stack_a, stack_b);
+		pb(stack_a, stack_b, 1);
 		pushed++;
 	}
 }

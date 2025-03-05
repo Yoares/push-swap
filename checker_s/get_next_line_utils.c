@@ -6,11 +6,11 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:14:40 by ykhoussi          #+#    #+#             */
-/*   Updated: 2024/12/07 18:11:42 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/05 21:26:08 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "checker_h.h"
 
 size_t	ft_strlen(char *s1)
 {
