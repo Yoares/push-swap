@@ -90,6 +90,30 @@ void	sa(t_stack **stack, int mark)
 		write(1, "sa\n", 3);
 }
 
+void	sb(t_stack **stack, int mark)
+{
+	t_stack	*first;
+	t_stack	*last;
+
+	if (!stack || !*stack || !(*stack)->next)
+		return ;
+	first = *stack;
+	last = first->next;
+	first->next = last->next;
+	last->next = first;
+	*stack = last;
+	if (mark)
+		write(1, "sb\n", 3);
+}
+
+void	ss(t_stack **a, t_stack **b, int mark)
+{
+	sa(a, 0);
+	sb(b, 0);
+	if (mark)
+		write(1, "ss\n", 3);
+}
+
 void	pa(t_stack **stack_a, t_stack **stack_b, int mark)
 {
 	t_stack	*tmp;

@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 00:40:09 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/05 21:13:47 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/05 21:47:48 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char *s1, char *s2);
-void	*ft_calloc(size_t count, size_t size);
-size_t	ft_strlen(char *s1);
-char	*ft_strchr(const char *s, int c);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
+char	*_strjoin(char *s1, char *s2);
+void	*_calloc(size_t count, size_t size);
+size_t	_strlen(char *s1);
+char	*_strchr(const char *s, int c);
+void	*_memcpy(void *dst, const void *src, size_t n);
 #endif

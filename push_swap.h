@@ -46,6 +46,8 @@ void	rrr(t_stack **stack_a, t_stack **stack_b, int mark);
 void	pa(t_stack **stack_a, t_stack **stack_b, int mark);
 void	pb(t_stack **stack_a, t_stack **stack_b, int mark);
 void	rr(t_stack **stack_a, t_stack **stack_b, int mark);
+void	sb(t_stack **stack, int mark);
+void	ss(t_stack **a, t_stack **b, int mark);
 
 // sort function
 void	sort_three(t_stack **stack);

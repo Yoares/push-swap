@@ -6,13 +6,13 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:14:40 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/05 21:26:08 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/05 21:47:40 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_h.h"
 
-size_t	ft_strlen(char *s1)
+size_t	_strlen(char *s1)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ size_t	ft_strlen(char *s1)
 	return (i);
 }
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*d;
 	unsigned char	*s;
@@ -45,7 +45,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*_strjoin(char *s1, char *s2)
 {
 	size_t	s1_len;
 	size_t	s2_len;
@@ -69,7 +69,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (ptr);
 }
 
-void	*ft_calloc(size_t count, size_t size)
+void	*_calloc(size_t count, size_t size)
 {
 	unsigned char	*s;
 	size_t			i;
@@ -88,7 +88,7 @@ void	*ft_calloc(size_t count, size_t size)
 	return (s);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*_strchr(const char *s, int c)
 {
 	size_t	i;
 
