@@ -63,9 +63,10 @@ void	set_position(t_stack **stack);
 void	set_cost(t_stack **stack_a, t_stack **stack_b);
 void	short_path(t_stack **stack_a, t_stack **stack_b);
 void	apply_rotation(t_stack **stack_a, t_stack **stack_b,
-			int tarif_a, int tarif_b);
+			int *tarif_a, int *tarif_b);
 void	set_target_position(t_stack **stack_a, t_stack **stack_b);
 void	last_sort(t_stack **a);
+void print_stack(t_stack *s);
 
 // parcing func
 int		parc_args(int ac, char **av, t_stack **stack_a);

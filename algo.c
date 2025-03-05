@@ -95,6 +95,7 @@ void	last_sort(t_stack **a)
 	int	min_pos;
 	int	size;
 
+	set_position(a);
 	size = lstsize(*a);
 	min_pos = search_min_pos(*a);
 	if (min_pos > size / 2)

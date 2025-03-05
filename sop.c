@@ -72,18 +72,21 @@ int	search_min_num(t_stack *stack)
 
 int	search_min_pos(t_stack *stack)
 {
-	int	min;
+	int	min_pos;
+	int min_index;
 
-	min = stack->index;
+	min_pos = 0;
+	min_index = stack->index;
 	while (stack)
 	{
-		if (stack->index <= min)
+		if (stack->index <= min_index)
 		{
-			min = (stack)->pos;
+			min_index = (stack)->index;
+			min_pos = stack->pos;
 		}
 		stack = stack->next;
 	}
-	return (min);
+	return (min_pos);
 }
 
 void	sort_five(t_stack **stack_a, t_stack **stack_b)

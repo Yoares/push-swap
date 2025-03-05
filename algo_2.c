@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 16:32:39 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/03 16:33:10 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:13:38 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	set_target_position(t_stack **stack_a, t_stack **stack_b)
 void	sorting_st(t_stack **stack_a, t_stack **stack_b)
 {
 	dev_stack(stack_a, stack_b);
+	sort_three(stack_a);
 	while (*stack_b)
 	{
 		set_target_position(stack_a, stack_b);

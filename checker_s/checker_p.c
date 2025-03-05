@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 00:36:57 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/05 21:51:48 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:02:18 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int main(int ac, char **av)
 	t_stack	*st_b;
 	char	*op;
 	
+	st_a = NULL;
 	st_b = NULL;
     if (ac == 1)
 		return 1;
@@ -68,7 +69,7 @@ int main(int ac, char **av)
 		free(op);
 		op = get_next_line(STDIN_FILENO);
 	}
-	if (is_sorted(st_a) && (st_b = NULL))
+	if (is_sorted(st_a))
 		write(1, "OK\n", 3);
 	else 
 		write(1, "KO\n", 3);

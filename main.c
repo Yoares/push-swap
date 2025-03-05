@@ -11,7 +11,15 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+// void print_stack(t_stack *s)
+// {
+// 	while (s)
+// 	{
+// 		printf("%d->",s->data);
+// 		s = s->next;
+// 	}
+// 	printf("NULL\n");
+// }
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
