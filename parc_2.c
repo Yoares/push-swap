@@ -80,15 +80,15 @@ int	parc_args(int ac, char **av, t_stack **stack_a)
 	while (i < ac)
 	{
 		vals = ft_split(av[i], ' ');
-		if (vals[1] == 0)
-		{
-			free_split(vals);
-			return (0);
-		}
 		if (!vals)
 		{
 			free_split(vals);
 			error_exit(stack_a, NULL);
+		}
+		if (vals[0] == 0)
+		{
+			free_split(vals);
+			return (0);
 		}
 		if (!set_stack_a(vals, stack_a))
 		{
