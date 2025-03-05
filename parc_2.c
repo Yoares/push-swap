@@ -74,20 +74,27 @@ static	int	set_stack_a(char **vals, t_stack **stack_a)
 
 int	parc_args(int ac, char **av, t_stack **stack_a)
 {
-	int		i;
 	char	**vals;
 
-	i = 1;
+	int (i) = 1;
 	while (i < ac)
 	{
 		vals = ft_split(av[i], ' ');
+		if (vals[1] == 0)
+		{
+			free_split(vals);
+			return (0);
+		}
 		if (!vals)
 		{
 			free_split(vals);
 			error_exit(stack_a, NULL);
 		}
 		if (!set_stack_a(vals, stack_a))
+		{
+			free_split(vals);
 			error_exit(stack_a, NULL);
+		}
 		free_split(vals);
 		i++;
 	}
