@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_h.h                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 00:40:09 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/04 21:43:06 by ykhoussi         ###   ########.fr       */
+/*   Created: 2024/11/28 15:15:10 by ykhoussi          #+#    #+#             */
+/*   Updated: 2024/12/08 14:37:13 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-# include "../Libft/libft.h"
-# include "../push.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "checker_h.h": "c",
+        "stdlib.h": "c"
+    }
+}
