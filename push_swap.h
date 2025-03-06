@@ -52,9 +52,16 @@ void	ss(t_stack **a, t_stack **b, int mark);
 // sort function
 void	sort_three(t_stack **stack);
 void	sort_five(t_stack **stack_a, t_stack **stack_b);
-int		search_min_num(t_stack *stack);
-int		is_sorted(t_stack *stack);
 void	remove_node(t_stack **stack, int data);
+int		is_sorted(t_stack *stack);
+
+// parcing func
+int		parc_args(int ac, char **av, t_stack **stack_a);
+
+// algo
+void	sorting_st(t_stack **stack_a, t_stack **stack_b);
+int		search_min_num(t_stack *stack);
+int		search_min_pos(t_stack *stack);
 void	dev_stack(t_stack **stack_a, t_stack **stack_b);
 void	get_index(t_stack **stack);
 void	sort_arr(int *arr, int size);
@@ -66,13 +73,6 @@ void	apply_rotation(t_stack **stack_a, t_stack **stack_b,
 			int *tarif_a, int *tarif_b);
 void	set_target_position(t_stack **stack_a, t_stack **stack_b);
 void	last_sort(t_stack **a);
-
-// parcing func
-int		parc_args(int ac, char **av, t_stack **stack_a);
-
-// algo
-void	sorting_st(t_stack **stack_a, t_stack **stack_b);
-int		search_min_pos(t_stack *stack);
 
 // error handeling
 void	free_stack(t_stack **stack);

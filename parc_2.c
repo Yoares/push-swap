@@ -55,7 +55,6 @@ static int	add_to_stack(t_stack **stack_a, int value)
 static	int	set_stack_a(char **vals, t_stack **stack_a)
 {
 	long	value;
-	t_stack	*new;
 	int		i;
 
 	i = 0;
