@@ -27,6 +27,12 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
+void	pr_err(void)
+{
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+}
+
 void	free_split(char **split)
 {
 	int	i;

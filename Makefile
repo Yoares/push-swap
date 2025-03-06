@@ -6,9 +6,9 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 NAME_B = checker
 
-SRCS = sop.c stack_func.c parc.c parc_2.c main.c algo.c algo_2.c op.c get_cost.c
+SRCS = sop.c stack_func.c parc.c parc_2.c main.c algo.c algo_2.c op.c get_cost.c op_2.c sop_2.c
 
-SRCS_B = sop.c stack_func.c parc.c parc_2.c algo.c algo_2.c op.c get_cost.c checker_s/checker_p.c checker_s/get_next_line.c checker_s/get_next_line_utils.c
+SRCS_B = sop.c stack_func.c parc.c parc_2.c algo.c algo_2.c op.c get_cost.c sop_2.c op_2.c checker_s/checker_p.c checker_s/get_next_line.c checker_s/get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
 

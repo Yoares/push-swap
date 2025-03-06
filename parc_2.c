@@ -41,6 +41,17 @@ static	int	check_duplicat(t_stack *stack, int num)
 	return (0);
 }
 
+static int	add_to_stack(t_stack **stack_a, int value)
+{
+	t_stack	*new;
+
+	new = lstnew(value);
+	if (!new)
+		return (0);
+	addback(stack_a, new);
+	return (1);
+}
+
 static	int	set_stack_a(char **vals, t_stack **stack_a)
 {
 	long	value;
@@ -57,10 +68,8 @@ static	int	set_stack_a(char **vals, t_stack **stack_a)
 				return (0);
 			if (!check_duplicat(*stack_a, (int)value))
 			{
-				new = lstnew((int)value);
-				if (!new)
+				if (!add_to_stack(stack_a, (int)value))
 					return (0);
-				addback(stack_a, new);
 			}
 			else
 				return (0);

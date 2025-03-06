@@ -73,7 +73,7 @@ int	search_min_num(t_stack *stack)
 int	search_min_pos(t_stack *stack)
 {
 	int	min_pos;
-	int min_index;
+	int	min_index;
 
 	min_pos = 0;
 	min_index = stack->index;
@@ -87,34 +87,4 @@ int	search_min_pos(t_stack *stack)
 		stack = stack->next;
 	}
 	return (min_pos);
-}
-
-void	sort_five(t_stack **stack_a, t_stack **stack_b)
-{
-	int	min;
-
-	while (lstsize(*stack_a) > 3)
-	{
-		min = search_min_num(*stack_a);
-		while (((*stack_a)->data) != min)
-		{
-			rra(stack_a, 1);
-		}
-		pb(stack_a, stack_b, 1);
-	}
-	sort_three(stack_a);
-	pa(stack_b, stack_a, 1);
-	pa(stack_b, stack_a, 1);
-}
-
-int	is_sorted(t_stack *stack)
-{
-	while (stack->next)
-	{
-		if (stack->data < stack->next->data)
-			stack = stack->next;
-		else
-			return (0);
-	}
-	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 14:36:58 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/05 22:11:30 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/06 21:01:17 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	set_cost(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-int	val_abs(int	nb)
+int	val_abs(int nb)
 {
 	if (nb > 0)
 		return (nb);

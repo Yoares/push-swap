@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -66,7 +66,6 @@ void	apply_rotation(t_stack **stack_a, t_stack **stack_b,
 			int *tarif_a, int *tarif_b);
 void	set_target_position(t_stack **stack_a, t_stack **stack_b);
 void	last_sort(t_stack **a);
-void print_stack(t_stack *s);
 
 // parcing func
 int		parc_args(int ac, char **av, t_stack **stack_a);
@@ -79,5 +78,6 @@ int		search_min_pos(t_stack *stack);
 void	free_stack(t_stack **stack);
 void	error_exit(t_stack **stack_a, t_stack **stack_b);
 void	free_split(char **split);
+void	pr_err(void);
 
 #endif

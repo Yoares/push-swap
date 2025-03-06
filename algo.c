@@ -29,15 +29,6 @@ int	*set_arr(t_stack *stack_a, int size)
 	return (arr);
 }
 
-void	swap(int *x, int *y)
-{
-	int	tmp;
-
-	tmp = *x;
-	*x = *y;
-	*y = tmp;
-}
-
 void	sort_arr(int *arr, int size)
 {
 	int	i;

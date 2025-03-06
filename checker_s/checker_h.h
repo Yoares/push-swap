@@ -6,12 +6,12 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 00:40:09 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/05 21:47:48 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/06 21:55:55 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef CHECKER_H_H
+# define CHECKER_H_H
 
 # include "../libft/libft.h"
 # include "../push_swap.h"
