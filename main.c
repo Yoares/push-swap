@@ -33,8 +33,6 @@ int	main(int ac, char **av)
 		return (0);
 	if (lstsize(stack_a) <= 3)
 		sort_three(&stack_a);
-	else if (lstsize(stack_a) <= 5)
-		sort_five(&stack_a, &stack_b);
 	else
 		sorting_st(&stack_a, &stack_b);
 	free_stack(&stack_a);

@@ -51,7 +51,6 @@ void	ss(t_stack **a, t_stack **b, int mark);
 
 // sort function
 void	sort_three(t_stack **stack);
-void	sort_five(t_stack **stack_a, t_stack **stack_b);
 void	remove_node(t_stack **stack, int data);
 int		is_sorted(t_stack *stack);
 

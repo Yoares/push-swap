@@ -62,9 +62,7 @@ int	search_min_num(t_stack *stack)
 	while (stack)
 	{
 		if (stack->data < min)
-		{
 			min = (stack)->data;
-		}
 		stack = stack->next;
 	}
 	return (min);
